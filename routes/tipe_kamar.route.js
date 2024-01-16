@@ -1,0 +1,10 @@
+const express = require('express')
+const app = express()
+app.use(express.json())
+const tipe_kamarController = require('../controllers/tipe_kamar.controller')
+app.get("/", tipe_kamarController.getAlltipe_kamar)
+app.post("/", tipe_kamarController.addtipe_kamar)
+app.post("/find", tipe_kamarController.findtipe_kamar)
+app.put("/:id", tipe_kamarController.updatetipe_kamar)
+app.delete("/:id", tipe_kamarController.deletetipe_kamar)
+module.exports = app 

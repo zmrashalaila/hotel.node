@@ -1,0 +1,10 @@
+const express = require('express')
+const app = express()
+app.use(express.json())
+const detail_pemesananController = require('../controllers/detail_pemesanan.controller')
+app.get("/", detail_pemesananController.getAlldetail_pemesanan)
+app.post("/", detail_pemesananController.adddetail_pemesanan)
+app.post("/find", detail_pemesananController.finddetail_pemesanan)
+app.put("/:id", detail_pemesananController.updatedetail_pemesanan)
+app.delete("/:id", detail_pemesananController.deletedetail_pemesanan)
+module.exports = app 

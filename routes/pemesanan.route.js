@@ -1,0 +1,10 @@
+const express = require('express')
+const app = express()
+app.use(express.json())
+const pemesananController = require('../controllers/pemesanan.controller')
+app.get("/", pemesananController.getAllpemesanan)
+app.post("/", pemesananController.addpemesanan)
+app.post("/find", pemesananController.findpemesanan)
+app.put("/:id", pemesananController.updatepemesanan)
+app.delete("/:id", pemesananController.deletepemesanan)
+module.exports = app 
